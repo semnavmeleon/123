@@ -70,16 +70,22 @@
     margin-top: 80px;
   }
 
+  .slide-hero {
+    margin-bottom: -30vh;
+  }
+
   .slide-hero + .slide {
     margin-top: 0;
   }
 
   .slide-hero {
     flex-direction: column;
-    padding: 40px 40px 25vh;
-    justify-content: center;
+    padding: 12vh 40px 0;
+    justify-content: flex-start;
     gap: 16px;
     min-height: 100vh;
+    max-height: 100vh;
+    overflow: visible;
   }
 
   .hero-left {
@@ -197,7 +203,7 @@
 /* ———— Tablets portrait ———— */
 @media (max-width: 900px) {
   .slide-hero {
-    padding: 60px 30px 20px;
+    padding: 12vh 30px 0;
   }
 
   .hero-title {
@@ -306,7 +312,7 @@
 
   /* Hero */
   .slide-hero {
-    padding: 60px 20px 30px;
+    padding: 11vh 20px 0;
     gap: 12px;
   }
 
@@ -601,7 +607,7 @@
   }
 
   .slide-hero {
-    padding: 40px 16px 25vh;
+    padding: 10vh 16px 0;
   }
 
   .hero-title {
