@@ -1,0 +1,203 @@
+/* ===== SLIDE 1: HERO ===== */
+.slide-hero {
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-left {
+  flex: 0 0 52%;
+  max-width: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.hero-right {
+  flex: 0 0 46%;
+  max-width: 46%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-title {
+  font-size: clamp(36px, 4.2vw, 62px);
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.hero-title .handwritten {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 1.1em;
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  color: var(--accent);
+  text-shadow: 0 0 40px rgba(43, 167, 201, 0.25);
+}
+
+.hero-slogan {
+  font-size: clamp(15px, 1.3vw, 19px);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 32px;
+  max-width: 520px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border: 1px solid rgba(43, 167, 201, 0.4);
+  border-radius: var(--pill-radius);
+  background: rgba(43, 167, 201, 0.05);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.hero-cta:hover {
+  background: rgba(43, 167, 201, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(43, 167, 201, 0.1);
+}
+
+.hero-cta:active {
+  transform: translateY(0);
+}
+
+.hero-cta svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-cta:hover svg {
+  stroke: var(--accent);
+}
+
+.hero-cta-secondary {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+}
+
+.hero-cta-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.hero-cta-secondary svg {
+  stroke: var(--text-secondary);
+}
+
+.hero-cta-secondary:hover svg {
+  stroke: var(--text-primary);
+}
+
+.hero-truck {
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 60px rgba(43, 167, 201, 0.1));
+  animation: truckFloat 6s ease-in-out infinite;
+}
+
+@keyframes truckFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-glow {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(43, 167, 201, 0.08) 0%, rgba(43, 167, 201, 0.03) 40%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ===== CALLBACK CTA (плавающая кнопка) ===== */
+.floating-callback {
+  position: fixed;
+  bottom: 90px;
+  right: 28px;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  background: var(--accent);
+  color: var(--bg-deep);
+  border: none;
+  border-radius: var(--pill-radius);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 4px 24px rgba(43, 167, 201, 0.35);
+  letter-spacing: 0.3px;
+}
+
+.floating-callback:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(43, 167, 201, 0.45);
+}
+
+.floating-callback svg {
+  width: 18px;
+  height: 18px;
+  fill: none !important;
+  stroke: #0A0E14 !important;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.floating-callback .pulse-ring {
+  position: absolute;
+  top: -4px; right: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4ADE80;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}

@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/
+
+User-agent: Googlebot
+Allow: /
+Allow: /img/
+
+User-agent: Yandex
+Allow: /
+Allow: /img/
+
+Sitemap: https://donbasscargo.ru/sitemap.xml
+Host: https://donbasscargo.ru
