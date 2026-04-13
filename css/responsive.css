@@ -67,7 +67,11 @@
   }
 
   .slide + .slide {
-    margin-top: 100px;
+    margin-top: 80px;
+  }
+
+  .slide-hero + .slide {
+    margin-top: 0;
   }
 
   .slide-hero {
