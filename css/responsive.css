@@ -68,10 +68,10 @@
 
   .slide-hero {
     flex-direction: column;
-    padding: 60px 40px 40px;
-    justify-content: center;
+    padding: 60px 40px 30px;
+    justify-content: flex-start;
     gap: 16px;
-    min-height: 100vh;
+    min-height: auto;
   }
 
   .hero-left {
@@ -298,8 +298,8 @@
 
   /* Hero */
   .slide-hero {
-    padding: 60px 20px 20px;
-    gap: 12px;
+    padding: 50px 20px 16px;
+    gap: 10px;
   }
 
   .hero-title {
@@ -329,9 +329,7 @@
   /* Services */
   .slide-services {
     justify-content: flex-start;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-align: start;
+    overflow: visible;
     padding-top: 90px;
     padding-bottom: 20px;
   }
@@ -377,9 +375,7 @@
 
   /* Contacts */
   .slide-contacts {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-align: start;
+    overflow: visible;
   }
 
   .contacts-main {
@@ -597,7 +593,7 @@
   }
 
   .slide-hero {
-    padding: 50px 16px 16px;
+    padding: 44px 16px 12px;
   }
 
   .hero-title {
@@ -868,8 +864,7 @@
 
   .slide-services,
   .slide-contacts {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
     padding-top: 70px;
   }
 
