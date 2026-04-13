@@ -30,6 +30,17 @@
 
 /* ———— Tablet breakpoint: disable slide navigation, normal scrolling ———— */
 @media (max-width: 1100px) {
+  /* Разблокируем скролл html/body для планшетов и мобильных (фикс "Версия для ПК") */
+  html,
+  body {
+    overflow: auto;
+    height: auto;
+  }
+
+  .slides-container {
+    height: auto;
+  }
+
   /* Hide navigation pill and dots — normal scroll */
   .nav-pill {
     display: none;
@@ -57,7 +68,7 @@
 
   .slide-hero {
     flex-direction: column;
-    padding: 90px 40px 40px;
+    padding: 60px 40px 40px;
     justify-content: center;
     gap: 16px;
     min-height: 100vh;
@@ -137,6 +148,11 @@
     justify-content: center;
   }
 
+  /* Отступ "Нам доверяют" от блока контактов */
+  .clients-block {
+    margin-top: 40px;
+  }
+
   /* Performance: отключаем тяжёлые анимации */
   .hero-truck {
     animation: none;
@@ -173,7 +189,7 @@
 /* ———— Tablets portrait ———— */
 @media (max-width: 900px) {
   .slide-hero {
-    padding: 90px 30px 20px;
+    padding: 60px 30px 20px;
   }
 
   .hero-title {
@@ -224,16 +240,27 @@
     margin: 0 30px;
   }
 
+  .floating-callback .callback-text {
+    display: none;
+  }
+
   .floating-callback {
-    padding: 12px 18px;
-    font-size: 12px;
+    padding: 14px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    max-width: none;
+    overflow: visible;
+    justify-content: center;
     bottom: 20px;
     right: 20px;
   }
 
   .floating-callback svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+    margin: 0;
   }
 }
 
@@ -271,7 +298,7 @@
 
   /* Hero */
   .slide-hero {
-    padding: 100px 20px 20px;
+    padding: 60px 20px 20px;
     gap: 12px;
   }
 
@@ -356,7 +383,7 @@
   }
 
   .contacts-main {
-    padding: 80px 20px 0;
+    padding: 40px 20px 0;
     gap: 20px;
   }
 
@@ -412,9 +439,8 @@
     scroll-snap-align: center;
   }
 
-  /* Footer — отступ снизу чтобы видно было копирайт */
   .slide-contacts {
-    padding-bottom: 60px;
+    padding-bottom: 0;
   }
 
   /* Footer */
@@ -461,18 +487,28 @@
     justify-content: center;
   }
 
-  /* Floating CTA */
+  /* Floating CTA — только иконка на мобильных */
+  .floating-callback .callback-text {
+    display: none;
+  }
+
   .floating-callback {
-    padding: 10px 16px;
-    font-size: 11px;
+    padding: 14px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    max-width: none;
+    overflow: visible;
+    justify-content: center;
     bottom: 16px;
     right: 16px;
-    gap: 8px;
   }
 
   .floating-callback svg {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
+    margin: 0;
   }
 
   /* Modals */
@@ -561,7 +597,7 @@
   }
 
   .slide-hero {
-    padding: 80px 16px 16px;
+    padding: 50px 16px 16px;
   }
 
   .hero-title {
@@ -619,7 +655,7 @@
   }
 
   .contacts-main {
-    padding: 70px 16px 0;
+    padding: 30px 16px 0;
     gap: 16px;
   }
 
@@ -703,13 +739,12 @@
     justify-content: center;
   }
 
-  /* Отступ снизу для футера */
   .slide-contacts {
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
 
   /* Floating callback — только иконка на очень маленьких экранах */
-  .floating-callback span {
+  .floating-callback .callback-text {
     display: none;
   }
 
@@ -718,6 +753,9 @@
     border-radius: 50%;
     width: 48px;
     height: 48px;
+    min-width: 48px;
+    max-width: none;
+    overflow: visible;
     justify-content: center;
   }
 
@@ -789,7 +827,7 @@
     padding: 16px 12px;
   }
 
-  .floating-callback span {
+  .floating-callback .callback-text {
     display: none;
   }
 
