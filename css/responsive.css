@@ -66,6 +66,10 @@
     min-height: auto;
   }
 
+  .slide + .slide {
+    margin-top: 100px;
+  }
+
   .slide-hero {
     flex-direction: column;
     padding: 60px 40px 30px;
