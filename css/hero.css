@@ -156,6 +156,7 @@
   z-index: 998;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 14px 24px;
   background: var(--accent);
@@ -169,6 +170,10 @@
   transition: all var(--transition);
   box-shadow: 0 4px 24px rgba(43, 167, 201, 0.35);
   letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100vw - 56px);
 }
 
 .floating-callback:hover {

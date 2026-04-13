@@ -11,7 +11,22 @@ let isScrollingToSlide = false; // Флаг: программная прокру
 let scrollDebounceTimer = null;
 
 // Detect if mobile/tablet (no snap scroll)
-const isSmallScreen = () => window.innerWidth <= 1100;
+let _isSmallScreen = window.innerWidth <= 1100;
+const isSmallScreen = () => _isSmallScreen;
+
+/* ---- Handle screen resize (includes "Desktop site" toggle on mobile) ---- */
+let resizeTimeout;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+    _isSmallScreen = window.innerWidth <= 1100;
+    if (_isSmallScreen) {
+      container.style.scrollSnapType = 'none';
+    } else {
+      container.style.scrollSnapType = 'y mandatory';
+    }
+  }, 200);
+}, { passive: true });
 
 /* ---- Scroll to a specific slide ---- */
 function goToSlide(index) {
@@ -139,18 +154,3 @@ document.addEventListener('keydown', function(e) {
     goToSlide(currentSlide - 1);
   }
 });
-
-/* ---- Handle screen resize ---- */
-let resizeTimeout;
-window.addEventListener('resize', function() {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(function() {
-    if (isSmallScreen()) {
-      // Show all slides, disable snap
-      container.style.scrollSnapType = 'none';
-    } else {
-      // Re-enable snap
-      container.style.scrollSnapType = 'y mandatory';
-    }
-  }, 200);
-}, { passive: true });
