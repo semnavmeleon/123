@@ -171,9 +171,7 @@
   box-shadow: 0 4px 24px rgba(43, 167, 201, 0.35);
   letter-spacing: 0.3px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: calc(100vw - 56px);
+  overflow: visible;
 }
 
 .floating-callback:hover {
