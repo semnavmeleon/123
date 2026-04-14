@@ -196,6 +196,7 @@
               <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
           </div>
+          <label class="consent-label"><input type="checkbox" id="contactConsent"> Я соглашаюсь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></label>
           <button class="submit-btn" onclick="submitContact()">Перезвоните мне</button>
         </div>
         <div class="contact-form-socials">
@@ -279,8 +280,7 @@
       <div class="footer-bottom">
         <div class="footer-copy">&copy; 2025 Донбасс Карго. Все права защищены.</div>
         <div class="footer-legal">
-          <a href="#" onclick="event.preventDefault(); showToast('Документ в разработке')">Политика конфиденциальности</a>
-          <a href="#" onclick="event.preventDefault(); showToast('Документ в разработке')">Пользовательское соглашение</a>
+          <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
         </div>
       </div>
     </footer>
@@ -431,6 +431,7 @@
     <div class="modal-field">
       <input type="email" class="modal-input" placeholder="Ваш e-mail (необязательно)" id="cbEmail">
     </div>
+    <label class="consent-label"><input type="checkbox" id="cbConsent"> Я соглашаюсь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></label>
     <button class="modal-submit" style="background:var(--accent); color:var(--bg-deep); border-color:var(--accent); font-weight:700;" onclick="submitCallback()">Перезвоните мне</button>
   </div>
 </div>
@@ -442,6 +443,12 @@
     <polyline points="22 4 12 14.01 9 11.01"/>
   </svg>
   <span id="toastText"></span>
+</div>
+
+<!-- Cookie consent banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-text">Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>.</div>
+  <button class="cookie-accept" onclick="acceptCookies()">Принять</button>
 </div>
 
 <!-- Single minified JS bundle (defer — non-blocking) -->
