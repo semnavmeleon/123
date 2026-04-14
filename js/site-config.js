@@ -1,7 +1,3 @@
-/**
- * Настройки сайта (редактируйте перед деплоем).
- * Подключайте этот файл ПЕРЕД js/all.min.js
- */
 window.SITE_CONFIG = {
   /** Email для FormSubmit (https://formsubmit.co) — заявки приходят на эту почту */
   formSubmitEmail: 'donbasscargo@mail.ru',
