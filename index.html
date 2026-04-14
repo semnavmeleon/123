@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Донбасс Карго | Грузоперевозки и логистика по России</title>
   <meta name="description" content="Донбасс Карго — надёжные транспортные решения для бизнеса. Негабаритные, шоссейные и персональные перевозки по территории Таможенного союза.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://donbasscargo.ru/">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://formsubmit.co https://mc.yandex.ru; frame-src https://mc.yandex.ru;">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Донбасс Карго — Грузоперевозки по России и СНГ">
+  <meta property="og:title" content="Донбасс Карго | Грузоперевозки и логистика по России">
   <meta property="og:description" content="Надёжные транспортные решения для бизнеса. Негабаритные, шоссейные и персональные перевозки по территории Таможенного союза.">
   <meta property="og:url" content="https://donbasscargo.ru/">
   <meta property="og:image" content="https://donbasscargo.ru/img/og-image.png">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Донбасс Карго">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Донбасс Карго | Грузоперевозки и логистика по России">
+  <meta name="twitter:description" content="Надёжные транспортные решения для бизнеса. Негабаритные, шоссейные и персональные перевозки по территории Таможенного союза.">
+  <meta name="twitter:image" content="https://donbasscargo.ru/img/og-image.png">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -289,7 +294,7 @@
   </svg>
   <span class="callback-text">Заказать звонок</span>
 </button>
-<div class="modal-overlay" id="calcModal">
+<div class="modal-overlay" id="calcModal" role="presentation">
   <div class="modal-content modal-calc" role="dialog" aria-modal="true" aria-labelledby="calcTitle">
     <button class="modal-close" onclick="closeCalculator()" aria-label="Закрыть">&#x2715;</button>
     <div class="calc-progress">
@@ -387,7 +392,7 @@
     </div>
   </div>
 </div>
-<div class="modal-overlay" id="callbackModal">
+<div class="modal-overlay" id="callbackModal" role="presentation">
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
     <button class="modal-close" onclick="closeCallback()" aria-label="Закрыть">&#x2715;</button>
     <div class="modal-title" id="cbTitle">Заказать обратный звонок</div>
@@ -421,7 +426,9 @@
   <div class="cookie-text">Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>.</div>
   <button class="cookie-accept" onclick="acceptCookies()">Принять</button>
 </div>
-<script src="js/all.min.js" defer></script>
+<script src="js/site-config.js"></script>
+  <script src="js/all.min.js" defer></script>
+  <script src="js/forms.js" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     buildNav(0);
@@ -433,6 +440,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Донбасс Карго",
+  "legalName": "ООО «Донбасс Карго»",
   "url": "https://donbasscargo.ru",
   "email": "donbasscargo@mail.ru",
   "description": "Грузоперевозки по России и территории Таможенного союза",

@@ -1,0 +1,13 @@
+# Netlify / Cloudflare Pages: заголовки для статики
+/*.css
+  Cache-Control: public, max-age=604800, immutable
+
+/*.js
+  Cache-Control: public, max-age=604800, immutable
+
+/img/*
+  Cache-Control: public, max-age=2592000
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
