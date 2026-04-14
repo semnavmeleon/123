@@ -16,6 +16,7 @@
   border-radius: 50%;
   background: radial-gradient(ellipse at center, rgba(43, 167, 201, 0.1) 0%, rgba(43, 167, 201, 0.04) 35%, transparent 65%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .services-title {
