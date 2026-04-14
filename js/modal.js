@@ -219,12 +219,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      // Format on focus loss
+      // Format on focus loss - don't clear incomplete phone, just leave as is
       input.addEventListener('blur', function(e) {
         var digits = e.target.value.replace(/\D/g, '');
-        if (digits.length > 0 && digits.length < 10) {
-          // Incomplete phone — clear
-          e.target.value = '';
+        // Only clear if it's obviously invalid (starts with +7 but has less than 3 digits after)
+        if (digits.length > 0 && digits.length < 4 && e.target.value.startsWith('+7')) {
+          // User started typing but didn't continue - keep it for better UX
+          // e.target.value = '';
         }
       });
     }
@@ -421,9 +422,6 @@ function openCallback() {
 
 function closeCallback() {
   document.getElementById('callbackModal').classList.remove('active');
-  document.getElementById('cbName').value = '';
-  document.getElementById('cbPhone').value = '';
-  document.getElementById('cbEmail').value = '';
 }
 
 function submitCallback() {
@@ -448,9 +446,6 @@ function submitCallback() {
 
   closeCallback();
   showToast('Спасибо, ' + name + '! Мы перезвоним вам в ближайшее время.');
-  document.getElementById('cbName').value = '';
-  document.getElementById('cbPhone').value = '';
-  document.getElementById('cbEmail').value = '';
 }
 
 // Close callback modal on overlay click
@@ -480,9 +475,6 @@ function submitContact() {
   // fetch('/api/callback', { method: 'POST', body: JSON.stringify({ name, phone }) })
 
   showToast('Спасибо, ' + name + '! Мы перезвоним вам в ближайшее время.');
-  document.getElementById('contactName').value = '';
-  document.getElementById('contactPhone').value = '';
-  document.getElementById('contactEmail').value = '';
 }
 
 /* ---- Toast ---- */
