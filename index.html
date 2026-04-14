@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Донбасс Карго | Грузоперевозки и логистика по России</title>
   <meta name="description" content="Донбасс Карго — надёжные транспортные решения для бизнеса. Негабаритные, шоссейные и персональные перевозки по территории Таможенного союза.">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/hero.css">
-  <link rel="stylesheet" href="css/services.css">
-  <link rel="stylesheet" href="css/contacts.css">
-  <link rel="stylesheet" href="css/modal.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Fonts: preconnect + reduced weights -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@700&display=swap">
+
+  <!-- Combined & minified CSS (single request) -->
+  <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
 
@@ -74,8 +73,10 @@
     </div>
     <div class="hero-right anim-target anim-right anim-d2">
       <div class="hero-glow"></div>
-      <img src="img/car.png"
-           alt="Грузовик для перевозки грузов" class="hero-truck" onerror="this.style.display='none'">
+      <picture>
+        <source srcset="img/car.webp" type="image/webp">
+        <img src="img/car.png" alt="Грузовик для перевозки грузов" class="hero-truck" decoding="async" onerror="this.style.display='none'">
+      </picture>
     </div>
   </section>
 
@@ -223,11 +224,11 @@
     <div class="clients-block anim-target anim-d3">
       <div class="clients-title">Нам доверяют</div>
       <div class="clients-logos">
-        <img src="img/client-mvideo.svg" alt="М.Видео" class="client-logo-img">
-        <img src="img/client-dns.svg" alt="DNS" class="client-logo-img">
-        <img src="img/client-pepsi.svg" alt="Pepsi" class="client-logo-img">
-        <img src="img/client-magnit.svg" alt="Магнит" class="client-logo-img">
-        <img src="img/client-leroy.svg" alt="Леруа Мерлен" class="client-logo-img">
+        <img src="img/client-mvideo.svg" alt="М.Видео" class="client-logo-img" loading="lazy">
+        <img src="img/client-dns.svg" alt="DNS" class="client-logo-img" loading="lazy">
+        <img src="img/client-pepsi.svg" alt="Pepsi" class="client-logo-img" loading="lazy">
+        <img src="img/client-magnit.svg" alt="Магнит" class="client-logo-img" loading="lazy">
+        <img src="img/client-leroy.svg" alt="Леруа Мерлен" class="client-logo-img" loading="lazy">
       </div>
     </div>
 
@@ -443,15 +444,13 @@
   <span id="toastText"></span>
 </div>
 
-<!-- Scripts -->
-<script src="js/cities.js"></script>
-<script src="js/navigation.js"></script>
-<script src="js/modal.js"></script>
-<script src="js/slides.js"></script>
+<!-- Single minified JS bundle (defer — non-blocking) -->
+<script src="js/all.min.js" defer></script>
 <script>
-  // Init
-  buildNav(0);
-  initSlideObserver();
+  document.addEventListener('DOMContentLoaded', function() {
+    buildNav(0);
+    initSlideObserver();
+  });
 </script>
 
 <!-- Schema.org микроразметка -->
