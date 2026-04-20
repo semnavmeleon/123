@@ -7,7 +7,7 @@
   <meta name="description" content="Донбасс Карго — надёжные транспортные решения для бизнеса. Негабаритные, шоссейные и персональные перевозки по территории Таможенного союза.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://donbasscargo.ru/">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://formsubmit.co https://mc.yandex.ru; frame-src https://mc.yandex.ru;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; script-src 'self' https://mc.yandex.ru 'sha256-xn7foAZfuSB2VQT4dO5s1PeBAis7tWEcsNJODeLYqQA='; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://formsubmit.co https://mc.yandex.ru; frame-src https://mc.yandex.ru; base-uri 'self'; form-action 'self' https://formsubmit.co;">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Донбасс Карго | Грузоперевозки и логистика по России">
   <meta property="og:description" content="Надёжные транспортные решения для бизнеса. Негабаритные, шоссейные и персональные перевозки по территории Таможенного союза.">
@@ -20,13 +20,16 @@
   <meta name="twitter:description" content="Надёжные транспортные решения для бизнеса. Негабаритные, шоссейные и персональные перевозки по территории Таможенного союза.">
   <meta name="twitter:image" content="https://donbasscargo.ru/img/og-image.png">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="mask-icon" href="favicon.svg" color="#2BA7C9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@700&display=swap">
   <link rel="stylesheet" href="css/all.min.css">
 </head>
 <body>
-<a class="logo" href="#" onclick="event.preventDefault(); goToSlide(0);" aria-label="Донбасс Карго — на главную">
+<a class="logo" href="#" data-action="goToSlide" data-arg="0" aria-label="Донбасс Карго — на главную">
   <svg class="logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <defs>
       <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -58,13 +61,13 @@
         Там, где другие сдаются, мы продолжаем путь
       </p>
       <div class="hero-buttons anim-target anim-left anim-d3">
-        <a href="#" class="hero-cta" onclick="event.preventDefault(); openCallback();">
+        <a href="#" class="hero-cta" data-action="openCallback">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
           Заказать звонок
         </a>
-        <a href="#" class="hero-cta hero-cta-secondary" onclick="event.preventDefault(); openCalculator();">
+        <a href="#" class="hero-cta hero-cta-secondary" data-action="openCalculator">
           Рассчитать стоимость
         </a>
       </div>
@@ -73,7 +76,7 @@
       <div class="hero-glow"></div>
       <picture>
         <source srcset="img/car.webp" type="image/webp">
-        <img src="img/car.png" alt="Грузовик для перевозки грузов" class="hero-truck" decoding="async" onerror="this.style.display='none'">
+        <img src="img/car.png" alt="Грузовик для перевозки грузов" class="hero-truck" decoding="async" data-hide-on-error>
       </picture>
     </div>
   </section>
@@ -81,56 +84,56 @@
     <div class="services-bg-glow"></div>
     <h2 class="services-title anim-target anim-d1">Наши услуги</h2>
     <div class="services-cards">
-      <div class="service-card anim-target anim-d2" onclick="openCallback()">
+      <div class="service-card anim-target anim-d2" data-action="openCallback">
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><rect x="1" y="6" width="15" height="13" rx="2"/><path d="M16 10h4l3 4v5h-7V10z"/><circle cx="5.5" cy="19.5" r="2.5"/><circle cx="18.5" cy="19.5" r="2.5"/></svg>
         </div>
         <h3 class="service-card-title">Негабаритные перевозки</h3>
         <div class="service-card-desc">Доставка негабаритных грузов по всей территории Таможенного союза. Оформление разрешений и сопровождение.</div>
         <div class="visually-hidden">Цена и условия перевозки негабаритных грузов по России и СНГ</div>
-        <a href="#" class="service-card-link" onclick="event.preventDefault();">
+        <a href="#" class="service-card-link" data-action="openCallback">
           Оставить заявку
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
           </svg>
         </a>
       </div>
-      <div class="service-card anim-target anim-d3" onclick="openCallback()">
+      <div class="service-card anim-target anim-d3" data-action="openCallback">
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><path d="M4 16V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12"/><path d="M2 20h20"/><path d="M12 2v14"/><path d="m8 10 4 4 4-4"/></svg>
         </div>
         <h3 class="service-card-title">Шоссейные перевозки</h3>
         <div class="service-card-desc">Доставка опасных и стандартных грузов на дальние расстояния в кратчайшие сроки.</div>
         <div class="visually-hidden">Стоимость шоссейных грузоперевозок по России — тарифы и условия</div>
-        <a href="#" class="service-card-link" onclick="event.preventDefault();">
+        <a href="#" class="service-card-link" data-action="openCallback">
           Оставить заявку
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
           </svg>
         </a>
       </div>
-      <div class="service-card anim-target anim-d4" onclick="openCallback()">
+      <div class="service-card anim-target anim-d4" data-action="openCallback">
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h3 class="service-card-title">Аренда трала</h3>
         <div class="service-card-desc">Транспортировка неделимых крупногабаритных грузов нестандартных размеров и форм.</div>
         <div class="visually-hidden">Аренда трала для перевозки крупногабаритных и тяжёлых грузов</div>
-        <a href="#" class="service-card-link" onclick="event.preventDefault();">
+        <a href="#" class="service-card-link" data-action="openCallback">
           Оставить заявку
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
           </svg>
         </a>
       </div>
-      <div class="service-card anim-target anim-d5" onclick="openCallback()">
+      <div class="service-card anim-target anim-d5" data-action="openCallback">
         <div class="service-icon">
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <h3 class="service-card-title">Персональные перевозки</h3>
         <div class="service-card-desc">Быстрая и аккуратная доставка мелких товаров до адреса получателя по всей России.</div>
         <div class="visually-hidden">Персональная доставка товаров и грузов по всей территории России</div>
-        <a href="#" class="service-card-link" onclick="event.preventDefault();">
+        <a href="#" class="service-card-link" data-action="openCallback">
           Оставить заявку
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
@@ -141,7 +144,7 @@
     <div class="calc-block anim-target anim-d6">
       <p class="calc-text">Узнайте стоимость перевозки за 30 секунд</p>
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <button class="calc-btn" onclick="openCalculator()">
+        <button class="calc-btn" data-action="openCalculator">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="4" y="2" width="16" height="20" rx="2"/>
             <line x1="8" y1="6" x2="16" y2="6"/>
@@ -150,7 +153,7 @@
           </svg>
           Рассчитать стоимость
         </button>
-        <button class="calc-btn" onclick="openCallback()">
+        <button class="calc-btn" data-action="openCallback">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
@@ -166,7 +169,7 @@
       <div class="contact-form-wrap">
         <div class="contact-form-title">Заказать обратный звонок</div>
         <div class="contact-form-subtitle">Оставьте контакты и мы перезвоним в ближайшее время</div>
-        <form class="contact-form-fields" onsubmit="event.preventDefault(); submitContact();">
+        <form class="contact-form-fields" data-submit="submitContact">
           <div class="input-group">
             <label for="contactName" class="visually-hidden">Ваше имя</label>
             <input type="text" class="input-pill" placeholder="Ваше имя" id="contactName" autocomplete="name">
@@ -194,13 +197,13 @@
         <div class="contact-form-socials">
           <span>или напишите нам:</span>
           <div class="contact-form-social-links">
-            <a href="#" onclick="event.preventDefault(); showToast('Переход в ВКонтакте...')">
+            <a href="#" data-action="showToastVK" aria-label="ВКонтакте">
               <svg viewBox="0 0 24 24"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.15-3.574 2.15-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
             </a>
-            <a href="#" onclick="event.preventDefault(); showToast('Переход в Telegram...')">
+            <a href="#" data-action="showToastTG" aria-label="Telegram">
               <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
             </a>
-            <a href="#" onclick="event.preventDefault(); showToast('Переход в WhatsApp...')">
+            <a href="#" data-action="showToastWA" aria-label="WhatsApp">
               <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
             </a>
             <a href="mailto:donbasscargo@mail.ru">
@@ -227,13 +230,13 @@
           <div class="footer-brand-name">ДОНБАСС КАРГО</div>
           <div class="footer-brand-desc">Надёжные грузоперевозки по России и территории Таможенного союза. Работаем с 2015 года.</div>
           <div class="footer-socials">
-            <a href="#" class="footer-social" title="ВКонтакте" onclick="event.preventDefault(); showToast('ВКонтакте')">
+            <a href="#" class="footer-social" title="ВКонтакте" data-action="showToastVKShort">
               <svg viewBox="0 0 24 24"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.678.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.15-3.574 2.15-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
             </a>
-            <a href="#" class="footer-social" title="Telegram" onclick="event.preventDefault(); showToast('Telegram')">
+            <a href="#" class="footer-social" title="Telegram" data-action="showToastTGShort">
               <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
             </a>
-            <a href="#" class="footer-social" title="WhatsApp" onclick="event.preventDefault(); showToast('WhatsApp')">
+            <a href="#" class="footer-social" title="WhatsApp" data-action="showToastWAShort">
               <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
             </a>
           </div>
@@ -241,11 +244,11 @@
         <div class="footer-col">
           <div class="footer-col-title">Услуги</div>
           <div class="footer-col-links">
-            <a href="#" class="footer-col-link" onclick="event.preventDefault(); openCallback();">Негабаритные перевозки</a>
-            <a href="#" class="footer-col-link" onclick="event.preventDefault(); openCallback();">Шоссейные перевозки</a>
-            <a href="#" class="footer-col-link" onclick="event.preventDefault(); openCallback();">Аренда трала</a>
-            <a href="#" class="footer-col-link" onclick="event.preventDefault(); openCallback();">Персональные перевозки</a>
-            <a href="#" class="footer-col-link" onclick="event.preventDefault(); openCalculator();">Калькулятор стоимости</a>
+            <a href="#" class="footer-col-link" data-action="openCallback">Негабаритные перевозки</a>
+            <a href="#" class="footer-col-link" data-action="openCallback">Шоссейные перевозки</a>
+            <a href="#" class="footer-col-link" data-action="openCallback">Аренда трала</a>
+            <a href="#" class="footer-col-link" data-action="openCallback">Персональные перевозки</a>
+            <a href="#" class="footer-col-link" data-action="openCalculator">Калькулятор стоимости</a>
           </div>
         </div>
         <div class="footer-col">
@@ -254,11 +257,11 @@
             <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             donbasscargo@mail.ru
           </a>
-          <a href="#" class="footer-contact-item" onclick="event.preventDefault(); openCallback();">
+          <a href="#" class="footer-contact-item" data-action="openCallback">
             <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Заказать звонок
           </a>
-          <a href="#" class="footer-contact-item" onclick="event.preventDefault(); showToast('Переход в Telegram...');">
+          <a href="#" class="footer-contact-item" data-action="showToastTG">
             <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             Написать в Telegram
           </a>
@@ -275,11 +278,11 @@
 </div>
 </main>
 <div class="slide-dots" id="slideDots">
-  <button class="slide-dot active" data-slide="0" onclick="goToSlide(0)" aria-label="Главная"></button>
-  <button class="slide-dot" data-slide="1" onclick="goToSlide(1)" aria-label="Услуги"></button>
-  <button class="slide-dot" data-slide="2" onclick="goToSlide(2)" aria-label="Контакты"></button>
+  <button class="slide-dot active" data-slide="0" data-action="goToSlide" data-arg="0" aria-label="Главная"></button>
+  <button class="slide-dot" data-slide="1" data-action="goToSlide" data-arg="1" aria-label="Услуги"></button>
+  <button class="slide-dot" data-slide="2" data-action="goToSlide" data-arg="2" aria-label="Контакты"></button>
 </div>
-<div class="scroll-indicator" id="scrollIndicator" onclick="goToSlide(currentSlide + 1)">
+<div class="scroll-indicator" id="scrollIndicator" data-action="goToNextSlide">
   <span>Далее</span>
   <div class="scroll-arrow">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -287,7 +290,7 @@
     </svg>
   </div>
 </div>
-<button class="floating-callback" onclick="openCallback()" aria-label="Заказать обратный звонок">
+<button class="floating-callback" data-action="openCallback" aria-label="Заказать обратный звонок">
   <span class="pulse-ring"></span>
   <svg viewBox="0 0 24 24" fill="none" stroke="#0A0E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -296,7 +299,7 @@
 </button>
 <div class="modal-overlay" id="calcModal" role="presentation">
   <div class="modal-content modal-calc" role="dialog" aria-modal="true" aria-labelledby="calcTitle">
-    <button class="modal-close" onclick="closeCalculator()" aria-label="Закрыть">&#x2715;</button>
+    <button class="modal-close" data-action="closeCalculator" aria-label="Закрыть">&#x2715;</button>
     <div class="calc-progress">
       <div class="calc-step-dots">
         <span class="calc-step-dot active" data-step="1"></span>
@@ -319,7 +322,7 @@
       <div class="calc-distance-hint" id="calcDistanceHint">Введите оба города для расчёта расстояния</div>
       <div class="calc-nav">
         <button class="calc-nav-btn calc-nav-back" disabled>Назад</button>
-        <button class="calc-nav-btn calc-nav-next" onclick="calcNext(2)">Далее</button>
+        <button class="calc-nav-btn calc-nav-next" data-action="calcNext" data-arg="2">Далее</button>
       </div>
     </div>
     <div class="calc-step" data-step="2">
@@ -327,18 +330,18 @@
       <div class="calc-step-desc">Укажите тип, вес и габариты</div>
       <div class="modal-field">
         <div class="custom-select" id="cargoSelect">
-          <div class="custom-select-trigger" onclick="toggleCargoSelect()">
+          <div class="custom-select-trigger" data-action="toggleCargoSelect">
             <span class="custom-select-value" id="cargoSelectValue">Тип груза</span>
             <svg class="custom-select-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 9l6 6 6-6"/>
             </svg>
           </div>
           <div class="custom-select-options" id="cargoOptions">
-            <div class="custom-option" data-value="standard" onclick="selectCargo(this)">Стандартный</div>
-            <div class="custom-option" data-value="oversized" onclick="selectCargo(this)">Негабаритный</div>
-            <div class="custom-option" data-value="dangerous" onclick="selectCargo(this)">Опасный</div>
-            <div class="custom-option" data-value="fragile" onclick="selectCargo(this)">Хрупкий</div>
-            <div class="custom-option" data-value="bulk" onclick="selectCargo(this)">Навалочный</div>
+            <div class="custom-option" data-value="standard" data-action="selectCargo">Стандартный</div>
+            <div class="custom-option" data-value="oversized" data-action="selectCargo">Негабаритный</div>
+            <div class="custom-option" data-value="dangerous" data-action="selectCargo">Опасный</div>
+            <div class="custom-option" data-value="fragile" data-action="selectCargo">Хрупкий</div>
+            <div class="custom-option" data-value="bulk" data-action="selectCargo">Навалочный</div>
           </div>
         </div>
         <input type="hidden" id="calcCargo" value="">
@@ -363,8 +366,8 @@
       </div>
       <div class="calc-volume" id="calcVolume">Объём: — м³</div>
       <div class="calc-nav">
-        <button class="calc-nav-btn calc-nav-back" onclick="calcPrev(1)">Назад</button>
-        <button class="calc-nav-btn calc-nav-next calc-nav-submit" onclick="submitCalc()">Рассчитать стоимость</button>
+        <button class="calc-nav-btn calc-nav-back" data-action="calcPrev" data-arg="1">Назад</button>
+        <button class="calc-nav-btn calc-nav-next calc-nav-submit" data-action="submitCalc">Рассчитать стоимость</button>
       </div>
     </div>
     <div class="calc-step" data-step="3">
@@ -381,23 +384,23 @@
       <div class="calc-result-details" id="calcDetails"></div>
       <div class="calc-result-note">* Точную стоимость рассчитает менеджер после уточнения деталей</div>
       <div class="calc-result-actions">
-        <button class="calc-result-btn calc-result-btn-primary" onclick="closeCalculator(); openCallback();">
+        <button class="calc-result-btn calc-result-btn-primary" data-action="closeCalcAndCallback">
           <svg viewBox="0 0 24 24" fill="none" stroke="#0A0E14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
           Заказать звонок
         </button>
-        <button class="calc-result-btn calc-result-btn-secondary" onclick="resetCalc()">Рассчитать ещё раз</button>
+        <button class="calc-result-btn calc-result-btn-secondary" data-action="resetCalc">Рассчитать ещё раз</button>
       </div>
     </div>
   </div>
 </div>
 <div class="modal-overlay" id="callbackModal" role="presentation">
   <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="cbTitle">
-    <button class="modal-close" onclick="closeCallback()" aria-label="Закрыть">&#x2715;</button>
+    <button class="modal-close" data-action="closeCallback" aria-label="Закрыть">&#x2715;</button>
     <div class="modal-title" id="cbTitle">Заказать обратный звонок</div>
     <div class="modal-desc">Оставьте контакты и мы перезвоним в ближайшее время</div>
-    <form onsubmit="event.preventDefault(); submitCallback();">
+    <form data-submit="submitCallback">
       <div class="modal-field">
         <label for="cbName" class="visually-hidden">Ваше имя</label>
         <input type="text" class="modal-input" placeholder="Ваше имя" id="cbName" autocomplete="name">
@@ -422,20 +425,23 @@
   </svg>
   <span id="toastText"></span>
 </div>
-<div class="cookie-banner" id="cookieBanner">
-  <div class="cookie-text">Мы используем файлы cookie для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a>.</div>
-  <button class="cookie-accept" onclick="acceptCookies()">Принять</button>
+<div class="cookie-banner hidden" id="cookieBanner">
+  <div class="cookie-text">Мы используем файлы cookie для улучшения работы сайта и аналитики (Яндекс.Метрика). Подробнее — в <a href="privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a>.</div>
+  <div class="cookie-actions">
+    <button class="cookie-accept" data-action="acceptCookies">Принять</button>
+    <button class="cookie-accept cookie-decline" data-action="declineCookies">Отклонить</button>
+  </div>
 </div>
-<script src="js/site-config.js"></script>
-  <script src="js/cities-data.js"></script>
-  <script src="js/all.min.js" defer></script>
-  <script src="js/forms.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    buildNav(0);
-    initSlideObserver();
-  });
-</script>
+<noscript>
+  <div style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#050608;color:#F5F1EA;padding:16px 24px;text-align:center;font-family:sans-serif;font-size:14px;border-bottom:1px solid #2BA7C9">
+    Для полноценной работы сайта требуется включить JavaScript. Связаться с нами напрямую: <a href="mailto:donbasscargo@mail.ru" style="color:#2BA7C9">donbasscargo@mail.ru</a>.
+  </div>
+</noscript>
+<script src="js/site-config.js" defer></script>
+<script src="js/cities-data.js" defer></script>
+<script src="js/all.min.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script src="js/init.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
