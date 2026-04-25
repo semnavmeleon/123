@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <defs>
+    <linearGradient id="dns-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FC8507"/>
+      <stop offset="100%" style="stop-color:#E06B00"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="60" rx="10" fill="url(#dns-grad)"/>
+  <text x="100" y="40" text-anchor="middle" fill="white" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900">DNS</text>
+</svg>

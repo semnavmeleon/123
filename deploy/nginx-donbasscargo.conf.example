@@ -1,0 +1,53 @@
+# Пример серверного блока Nginx. Скопируйте и подставьте пути к сертификатам и root.
+# ssl_certificate / путь к сайту — настройте под свой сервер.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name donbasscargo.ru www.donbasscargo.ru;
+    return 301 https://donbasscargo.ru$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name donbasscargo.ru;
+
+    root /var/www/donbasscargo;
+    index index.html;
+
+    ssl_certificate     /etc/letsencrypt/live/donbasscargo.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/donbasscargo.ru/privkey.pem;
+
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+
+    location ~* \.(css|js|png|webp|svg|ico)$ {
+        expires 7d;
+        add_header Cache-Control "public, immutable";
+    }
+
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.donbasscargo.ru;
+    return 301 https://donbasscargo.ru$request_uri;
+}
+
+# После деплоя вручную:
+# — Google Search Console и Яндекс.Вебмастер: подтвердить владение, отправить sitemap.xml
+# — при подключении Яндекс.Метрики укажите ID в js/site-config.js
+# — аналитика только после согласия с cookie (уже реализовано в forms.js)
