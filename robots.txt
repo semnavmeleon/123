@@ -1,6 +1,0 @@
-# https://donbasscargo.ru/robots.txt
-User-agent: *
-Allow: /
-
-Sitemap: https://donbasscargo.ru/sitemap.xml
-Host: https://donbasscargo.ru
